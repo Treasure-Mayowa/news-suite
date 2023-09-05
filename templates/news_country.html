@@ -1,7 +1,13 @@
 {% extends 'layout.html' %}
 {%block body %}
     {% for single_news in news %}
-        <img src="{{ single_news.urlToImage }}">
-        <h3><a href="{{ single_news.url }}">{{ single_news.title }}</a></h3>
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{ single_news.urlToImage }}">
+        <div class="card-body">
+          <h3 class="card-title"><a href="{{ single_news.url }}">{{ single_news.title }}</a></h3>
+          <p class="card-text">{{ single_news.description}}</p>
+          <button class="btn btn-primary">{{ single_news.source.name }}</button>
+        </div>
+    </div>  
     {% endfor %}
 {% endblock %}
