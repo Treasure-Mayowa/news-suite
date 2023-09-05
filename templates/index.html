@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 {% block body %}
     {% for single_news in news %}
-    <div class="card" style="width: auto;">
+    <div class="card" style="width: 80%;">
         <img class="card-img-top" src="{{ single_news.urlToImage }}">
         <div class="card-body">
           <h3 class="card-title"><a href="{{ single_news.url }}">{{ single_news.title }}</a></h3>
