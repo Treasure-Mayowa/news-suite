@@ -1,13 +1,19 @@
 {% extends 'layout.html' %}
 {% block body %}
-    {% for single_news in news %}
-    <div class="card" style="width: 80%;">
-        <img class="card-img-top" src="{{ single_news.urlToImage }}">
-        <div class="card-body">
-          <h3 class="card-title"><a href="{{ single_news.url }}">{{ single_news.title }}</a></h3>
-          <p class="card-text">{{ single_news.description}}</p>
-          <button class="btn btn-primary">{{ single_news.source.name }}</button>
+    {% for single_news in news %}  
+    <div class="card mb-3" style="max-width: 80%;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="{{ single_news.urlToImage }}" class="img-fluid rounded-start" alt="...">
         </div>
-    </div>   
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title"><a href="{{ single_news.url }}">{{ single_news.title }}</a></h5>
+            <p class="card-text">{{ single_news.description }}.</p>
+            <button class="btn btn-primary">{{ single_news.source.name }}</button>
+          </div>
+        </div>
+      </div>
+    </div>
     {% endfor %}
 {% endblock %}
